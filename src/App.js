@@ -9,7 +9,7 @@ const formReducer = (state, event) => {
       age: 0,
       firstName: '',
       lastName: '',
-      'gift-wrap': false
+      'decision': false
     }
   }
 
@@ -133,16 +133,16 @@ function App() {
                 <input type="number" name="age" onChange={handleChange} step="1" value={formData.age || ''}/>
               </label>
               {checkboxes.map(checkbox => (
-                  <label>
-                    <div>{checkbox.label}</div>
-                    <input
-                        type="checkbox"
-                        disabled={checkbox.disabled}
-                        name={checkbox.name}
-                        onChange={handleChange}
-                        checked={checkbox.checked}
-                    />
-                  </label>
+                <label>
+                  <div>{checkbox.label}</div>
+                  <input
+                      type="checkbox"
+                      disabled={checkbox.disabled}
+                      name={checkbox.name}
+                      onChange={handleChange}
+                      checked={checkbox.checked}
+                  />
+                </label>
               ))}
             </fieldset>
             <button type="submit" disabled={submitting} className="btn">Submit</button>
